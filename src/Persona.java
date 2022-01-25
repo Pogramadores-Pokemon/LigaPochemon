@@ -17,8 +17,6 @@ public abstract class Persona {
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-
-	
 	
 	public int getEdad() {
 		return edad;

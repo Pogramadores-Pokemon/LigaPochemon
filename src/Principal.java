@@ -16,44 +16,49 @@ public class Principal {
 	
 	private static Jugador[] crearJugadores(int numeroJugadores, int edad, Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
-		String[] nombres = {"Antonio", "Pepito", "Alejandra", "Ismael", "Hugo", "Oliver","Kalesi",
-				"Ingrid","Astrid","Indira","Jenny","Jessi","Vane","Joel","Bruno",
-				"Sasha","Billie","Masha","Pingu"};
-		String[] apellidos = {"Messi", "Vinicius", "Cristiano", "Ronaldo", "PiquÃ©","Bale (lesionado)",
-				"Amunike","N'kono","ButragueÃ±o","SanchÃ­s","Neymar","Batistuta","Maradona",
-				"PelÃ©","Beckenbauer"};
+		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "León", "Maya", "Lira", "Lucho",
+							"Liza", "Rizzo", "Nanci", "Kalm", "Serena", "Elio", "Selene", "Chase",
+							"Elaine", "Victor", "Gloria", "Luka", "Kira", "Misty", "Brock", "Tracey",
+							"Yasmina", "Antón", "Vito", "Leti", "Gardenia", "Roco", "Millo", "Iris",
+							"Corelia", "Lem"};
+		
+		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragón", "Eléctrico","Fuego","Fantasma",
+							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca",
+							  "Siniestro", "Tierra", "Veneno", "Volador"};
+		
 		String[] posiciones = {"Portero/a","Defensa","Centrocampista","Delantero/a"};
 		
-		//Estructura de Array de Jugadores
+		// Estructura de Array de Jugadores
 		Jugador[] jugadores = new Jugador[numeroJugadores];
 		
 		for (int i=0; i<numeroJugadores; i++) {
-			//Crear un Jugador
+			// Crear un Jugador
 			Jugador jug = new Jugador();
-			//Nombre
+			
+			// Nombre
 			int numero = (int) Math.floor(Math.random()*nombres.length);
 			String nombre = nombres[numero];
 			jug.setNombre(nombre);
 
-			//Apellidos
+			// Apellidos
 			numero = (int) Math.floor(Math.random()*apellidos.length);
 			String apellido1 = apellidos[numero];
 			numero = (int) Math.floor(Math.random()*apellidos.length);
 			String apellido2 = apellidos[numero];
 			jug.setApellidos(apellido1+" "+apellido2);
 
-			//PosiciÃ³n
+			// Posición
 			numero = (int) Math.floor(Math.random()*posiciones.length);
 			String posicion = posiciones[numero];
 			jug.setPosicion(posicion);
 
-			//Edad
+			// Edad
 			jug.setEdad(edad);
 
-			//Dorsal
+			// Dorsal
 			jug.setDorsal(i+1);
 			
-			//Equipo
+			// Equipo
 			jug.setEquipo(equipo);
 
 			jugadores[i]=jug;
@@ -65,32 +70,28 @@ public class Principal {
 
 	private static Equipo[] crearEquipos(int numeroEquipos,int edad) {
 		
-		String [] nombreBarrios = {"El Candado", "Huelin", "Tiro PichÃ³n", "RincÃ³n de la Victoria", "La Rosaleda", "Torremolinos",
-				"Velez MÃ¡laga","Cerrado de Calderon", "El Puerto de la Torre", "Bresca", "Mezquitilla", "Teatinos", "Motril",
-				"Centro","Santa Paula", "El Palo", "Los Corazones", "Las Delicias", "Recogidas","Nueva MÃ¡laga", "Casas Blancas",
-				"La Palmilla","Los Asperones","Campanillas","La Corta"};
-		String [] mascotas = {"Los Pollos", "Los Araclanes", "Los Limones", "Los Delfines", "Los Chanquetes", "Los Gatitos",
-								"Los Boquerones", "Los Toros", "Los Perritos", "Los Halcones", "Los Ornitorrincos", "Los Caracoles",
-								"Los Palomos Cojos", "Los Heterosaurios", "Las Tortugas Ninjas", "Los Pintarrojas"};
+		String [] nombreBarrios = {"Kanto", "Johto", "Hoenn", "Sinnoh", "Teselia", "Unova", "Kalos", "Alola", "Galar",
+								   "Hisui", "Almia", "Aura"};
+		
+		String [] mascotas = {"Los Dratinis", "Los Stantlers", "Los Absols", "Los Luxios", "Los Trubbishes", "Los Kricketots",
+							  "Los Panchams", "Los Oricorios", "Los Yampers", "Los Eevees", "Los Drifloons", "Los Emolgas"};
 
 		Equipo [] listaEquipos= new Equipo[numeroEquipos];
 		
 		for (int i=0; i<numeroEquipos; i++) {
-			//Creamos Equipo
+			// Creamos Equipo
 			Equipo equipo = new Equipo();
-
-
 			
-			//Elegimos random un nombre y una mascota de las listas respectivas.
+			// Elegimos random un nombre y una mascota de las listas respectivas.
 			int numero = (int) Math.floor(Math.random()*nombreBarrios.length);
 			String barrio= nombreBarrios[numero];
 			numero = (int) Math.floor(Math.random()*mascotas.length);
 			String mascota= mascotas[numero];
 
-			//Definimos el club en base al nombre del barrio
+			// Definimos el club en base al nombre del barrio
 			equipo.setClub(barrio+" F.C.");
 			
-			//Las pegamos con un "de" en medio
+			// Las pegamos con un "de" en medio
 			String nombre;
 			if (barrio.startsWith("El ")) {
 				barrio=barrio.substring(3);
@@ -100,16 +101,16 @@ public class Principal {
 			}
 			
 			equipo.setNombre(nombre);
-			//Continuamos con entrenador
+			// Continuamos con entrenador
 			Entrenador entrenador = crearEntrenador(equipo);
 			equipo.setEntrenador(entrenador);
 			
-			//Meter los jugadores
+			// Meter los jugadores
 			int numeroJugadores=(int) Math.floor(Math.random()*7)+15;
 			Jugador[] jugadores = crearJugadores(numeroJugadores,edad,equipo);
 			equipo.setJugadores(jugadores);
 			
-			//Meter el equipo en el array de equipos
+			// Meter el equipo en el array de equipos
 			
 			listaEquipos[i]=equipo;
 			
@@ -122,12 +123,13 @@ public class Principal {
 
 	private static Entrenador crearEntrenador(Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
-		String[] nombres = {"Antonio", "Pepito", "Alejandra", "Ismael", "Hugo", "Oliver","Kalesi",
-				"Ingrid","Astrid","Indira","Jenny","Jessi","Vane","Joel","Bruno",
-				"Sasha","Billie","Masha","Pingu"};
-		String[] apellidos = {"Messi", "Vinicius", "Cristiano", "Ronaldo", "PiquÃ©","Bale (lesionado)",
-				"Amunike","N'kono","ButragueÃ±o","SanchÃ­s","Neymar","Batistuta","Maradona",
-				"PelÃ©","Beckenbauer"};
+		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Ciprés", "Kukui", "Magnolia",
+							"Cío", "Nereida", "Lulú", "Chris", "Kiawe"};
+		
+		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragón", "Eléctrico","Fuego","Fantasma",
+							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca",
+							  "Siniestro", "Tierra", "Veneno", "Volador"};
+		
 		Entrenador entrenador = new Entrenador();
 		
 		//Nombre
