@@ -1,11 +1,7 @@
-
-
 public class Principal {
 
 	public static void main(String[] args) {
-		
 		//Crear una Lista de Equipo
-		
 		int edad = (int) Math.floor(Math.random()*15)+4;
 		int numeroEquipos = (int) Math.floor(Math.random()*13)+4;
 		Equipo[] listaEquipos = crearEquipos(numeroEquipos, edad);
@@ -15,13 +11,9 @@ public class Principal {
 		for (Equipo e: listaEquipos) {
 			System.out.println(e.getNombre());
 		}
-		
-
-		
-
-
 	}
 
+	
 	private static Jugador[] crearJugadores(int numeroJugadores, int edad, Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
 		String[] nombres = {"Antonio", "Pepito", "Alejandra", "Ismael", "Hugo", "Oliver","Kalesi",

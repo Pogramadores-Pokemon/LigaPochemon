@@ -44,12 +44,14 @@ public final class Jugador extends Persona{
 			
 		}
 	}
+	
 	public String getPosicion() {
 		return posicion;
 	}
 	public void setPosicion(String posicion) {
 		this.posicion = posicion;
 	}
+	
 	public int getDorsal() {
 		return dorsal;
 	}
@@ -57,11 +59,9 @@ public final class Jugador extends Persona{
 		this.dorsal = dorsal;
 	}
 
-
 	public Equipo getEquipo() {
 		return equipo;
 	}
-
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
 	}

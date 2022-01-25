@@ -10,12 +10,14 @@ public class Entrenador extends Persona{
 	public void setNumeroLicencia(int numeroLicencia) {
 		this.numeroLicencia = numeroLicencia;
 	}
+	
 	public Equipo getEquipo() {
 		return equipo;
 	}
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
 	}
+	
 	@Override
 	public String toString() {
 		return super.toString()+"\n"+
