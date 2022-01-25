@@ -16,14 +16,14 @@ public class Principal {
 	
 	private static Jugador[] crearJugadores(int numeroJugadores, int edad, Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
-		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "León", "Maya", "Lira", "Lucho",
+		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "Leï¿½n", "Maya", "Lira", "Lucho",
 							"Liza", "Rizzo", "Nanci", "Kalm", "Serena", "Elio", "Selene", "Chase",
 							"Elaine", "Victor", "Gloria", "Luka", "Kira", "Misty", "Brock", "Tracey",
-							"Yasmina", "Antón", "Vito", "Leti", "Gardenia", "Roco", "Millo", "Iris",
+							"Yasmina", "Antï¿½n", "Vito", "Leti", "Gardenia", "Roco", "Millo", "Iris",
 							"Corelia", "Lem"};
 		
-		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragón", "Eléctrico","Fuego","Fantasma",
-							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca",
+		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragï¿½n", "Elï¿½ctrico","Fuego","Fantasma",
+							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psï¿½quico", "Roca",
 							  "Siniestro", "Tierra", "Veneno", "Volador"};
 		
 		String[] posiciones = {"Portero/a","Defensa","Centrocampista","Delantero/a"};
@@ -47,7 +47,7 @@ public class Principal {
 			String apellido2 = apellidos[numero];
 			jug.setApellidos(apellido1+" "+apellido2);
 
-			// Posición
+			// Posiciï¿½n
 			numero = (int) Math.floor(Math.random()*posiciones.length);
 			String posicion = posiciones[numero];
 			jug.setPosicion(posicion);
@@ -75,6 +75,12 @@ public class Principal {
 		
 		String [] mascotas = {"Los Dratinis", "Los Stantlers", "Los Absols", "Los Luxios", "Los Trubbishes", "Los Kricketots",
 							  "Los Panchams", "Los Oricorios", "Los Yampers", "Los Eevees", "Los Drifloons", "Los Emolgas"};
+							  		
+		String [] clubs = {"Kanto BalÃ³n Pai", "Johto Futball Clup","Union de Hoenn","S de Sinnoh F.C","Teselia de Desta",
+							"Unova Deportiva","Real Kalos furbo","ClÃº Dah Lola","Galar Galante Club",
+							"UniÃ³n Pijos de Hisui ","Rial D'almia F.C.","Boreales Du Aura"};
+		}
+				
 
 		Equipo [] listaEquipos= new Equipo[numeroEquipos];
 		
@@ -123,11 +129,11 @@ public class Principal {
 
 	private static Entrenador crearEntrenador(Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
-		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Ciprés", "Kukui", "Magnolia",
-							"Cío", "Nereida", "Lulú", "Chris", "Kiawe"};
+		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Ciprï¿½s", "Kukui", "Magnolia",
+							"Cï¿½o", "Nereida", "Lulï¿½", "Chris", "Kiawe"};
 		
-		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragón", "Eléctrico","Fuego","Fantasma",
-							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psíquico", "Roca",
+		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragï¿½n", "Elï¿½ctrico","Fuego","Fantasma",
+							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psï¿½quico", "Roca",
 							  "Siniestro", "Tierra", "Veneno", "Volador"};
 		
 		Entrenador entrenador = new Entrenador();
