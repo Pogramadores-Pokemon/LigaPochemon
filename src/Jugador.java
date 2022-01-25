@@ -19,16 +19,16 @@ public final class Jugador extends Persona{
 		switch(edad) {
 		case 4:
 		case 5:
-			return "Chupetín";
+			return "Chupetin";
 		case 6:
 		case 7:
-			return "Prebenjamín";
+			return "Prebenjamin";
 		case 8:
 		case 9:
-			return "Benjamín";
+			return "Benjamin";
 		case 10:
 		case 11:
-			return "Alevín";
+			return "Alevin";
 		case 12:
 		case 13:
 			return "Infantil";

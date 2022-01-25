@@ -127,11 +127,11 @@ public class Principal {
 	private static Entrenador crearEntrenador(Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
 		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Cipres", "Kukui", "Magnolia",
-				"Cio", "Nereida", "Lulu", "Chris", "Kiawe"};
+							"Cio", "Nereida", "Lulu", "Chris", "Kiawe"};
 	
 		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragon", "Electrico","Fuego","Fantasma",
-				"Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca",
-				"Siniestro", "Tierra", "Veneno", "Volador"};
+							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca",
+							  "Siniestro", "Tierra", "Veneno", "Volador"};
 	
 		Entrenador entrenador = new Entrenador();
 	
