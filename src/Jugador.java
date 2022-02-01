@@ -5,6 +5,7 @@ public final class Jugador extends Persona{
 	private int dorsal;
 	private Equipo equipo;
 	
+	
 	@Override
 	public void setEdad(int edad) {
 		super.setEdad(edad);

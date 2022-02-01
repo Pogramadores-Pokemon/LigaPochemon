@@ -12,8 +12,8 @@ public class Principal {
 			System.out.println(e.getNombre());
 		}
 	}
-
-
+	
+	
 	private static Jugador[] crearJugadores(int numeroJugadores, int edad, Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
 		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "Leon", "Maya", "Lira", "Lucho",
@@ -47,7 +47,7 @@ public class Principal {
 			String apellido2 = apellidos[numero];
 			jug.setApellidos(apellido1+" "+apellido2);
 
-			// Posici�n
+			// Posicion
 			numero = (int) Math.floor(Math.random()*posiciones.length);
 			String posicion = posiciones[numero];
 			jug.setPosicion(posicion);
@@ -159,4 +159,5 @@ public class Principal {
 	
 		return entrenador;
 	}
+
 }

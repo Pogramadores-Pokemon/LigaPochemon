@@ -8,7 +8,6 @@ public class Equipo {
 	private Jugador[] jugadores;
 	
 	
-	
 	public String getNombre() {
 		return nombre;
 	}
@@ -70,6 +69,5 @@ public class Equipo {
 				toStringJugadores(this.jugadores);
 		
 	}
-
 
 }

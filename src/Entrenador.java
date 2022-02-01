@@ -1,6 +1,5 @@
 
 public class Entrenador extends Persona{
-	
 	private int numeroLicencia;
 	private Equipo equipo;
 	
@@ -24,9 +23,4 @@ public class Entrenador extends Persona{
 				"Numero Licencia: "+this.numeroLicencia+"\n";
 	}
 	
-	
-	
-	
-
-
 }
