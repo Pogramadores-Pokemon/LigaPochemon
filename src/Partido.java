@@ -1,5 +1,6 @@
 
 public class Partido {
+
 	private Arbitro [] arbitro;
 	private int golfavor;
 	private int golcontra;
@@ -36,4 +37,5 @@ public class Partido {
 	public void setEquipovisit(Equipo equipovisit) {
 		this.equipovisit = equipovisit;
 	}
+
 }

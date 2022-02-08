@@ -4,7 +4,7 @@ public final class Jugador extends Persona{
 	private String posicion;
 	private int dorsal;
 	private Equipo equipo;
-	
+
 	
 	@Override
 	public void setEdad(int edad) {
@@ -71,7 +71,7 @@ public final class Jugador extends Persona{
 	public String toString() {
 		return super.toString()+", "+categoria+"\n"+
 				"Equipo: "+equipo.getNombre()+"\n"+
-				"Dorsal: "+dorsal+" Posición: "+posicion+"\n";
+				"Dorsal: "+dorsal+" Posicion: "+posicion+"\n";
 	}
 
 	

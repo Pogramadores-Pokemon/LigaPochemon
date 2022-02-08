@@ -1,5 +1,6 @@
 
 public class Jornada {
+
 	private Arbitro [] arbitro;
 	private Partido [] partido;
 	private int horario;
@@ -22,5 +23,7 @@ public class Jornada {
 	public void setHorario(int horario) {
 		this.horario = horario;
 	}
+
+
 	
 }
