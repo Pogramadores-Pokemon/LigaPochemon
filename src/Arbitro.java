@@ -11,7 +11,6 @@ public class Arbitro extends Persona{
 		this.registro = registro;
 	}
 	
-	
 	public Equipo getEquipo() {
 		return equipo;
 	}

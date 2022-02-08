@@ -3,6 +3,7 @@ public class Entrenador extends Persona{
 	private int numeroLicencia;
 	private Equipo equipo;
 	
+	
 	public int getNumeroLicencia() {
 		return numeroLicencia;
 	}
