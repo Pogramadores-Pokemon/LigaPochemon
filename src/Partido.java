@@ -2,10 +2,10 @@
 public class Partido {
 
 	private Arbitro [] arbitro;
-	private int golfavor;
-	private int golcontra;
-	private Equipo equipolocal;
-	private Equipo equipovisit;
+	private int Favor;
+	private int Contra;
+	private Equipo Local;
+	private Equipo Visitante;
 	
 	public Arbitro[] getArbitro() {
 		return arbitro;
@@ -13,29 +13,32 @@ public class Partido {
 	public void setArbitro(Arbitro[] arbitro) {
 		this.arbitro = arbitro;
 	}
-	public int getGolfavor() {
-		return golfavor;
+
+	public Equipo getLocal() {
+		return Local;
 	}
-	public void setGolfavor(int golfavor) {
-		this.golfavor = golfavor;
+	public void setLocal(Equipo local) {
+		Local = local;
 	}
-	public int getGolcontra() {
-		return golcontra;
+	public Equipo getVisitante() {
+		return Visitante;
 	}
-	public void setGolcontra(int golcontra) {
-		this.golcontra = golcontra;
+	public void setVisitante(Equipo visitante) {
+		Visitante = visitante;
 	}
-	public Equipo getEquipolocal() {
-		return equipolocal;
+	public int getFavor() {
+		return Favor;
 	}
-	public void setEquipolocal(Equipo equipolocal) {
-		this.equipolocal = equipolocal;
+	public void setFavor(int favor) {
+		Favor = favor;
 	}
-	public Equipo getEquipovisit() {
-		return equipovisit;
+	public int getContra() {
+		return Contra;
 	}
-	public void setEquipovisit(Equipo equipovisit) {
-		this.equipovisit = equipovisit;
+	public void setContra(int contra) {
+		Contra = contra;
 	}
+
+	
 
 }
