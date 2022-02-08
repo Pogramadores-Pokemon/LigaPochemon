@@ -15,7 +15,7 @@ public class Principal {
 	
 	
 	private static Jugador[] crearJugadores(int numeroJugadores, int edad, Equipo equipo) {
-		//Listado de Nombres, Apellidos, Posiciones para generador random
+
 		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "Leon", "Maya", "Lira", "Lucho",
 				"Liza", "Rizzo", "Nanci", "Kalm", "Serena", "Elio", "Selene", "Chase",
 				"Elaine", "Victor", "Gloria", "Luka", "Kira", "Misty", "Brock", "Tracey",
@@ -103,7 +103,7 @@ public class Principal {
 				barrio=barrio.substring(3);
 				nombre = mascota + " del "+ barrio;
 			}else {
-				nombre = mascota + " de "+ barrio;
+				nombre = mascota + " de "+ barrio;                                                                   
 			}
 	
 			equipo.setNombre(nombre);
