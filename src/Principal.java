@@ -14,7 +14,7 @@ public class Principal {
 		//Imprimimos los equipos
 		System.out.println("Numero de equipos: "+numEquipos);
 		for (Equipo e: listaEquipos) {
-			System.out.println(e.getNombre()+" de "+e.getClub());
+			System.out.println(e.getNombre());
 		}
 	}
 	
@@ -34,7 +34,7 @@ public class Principal {
 		// Estructura de Array de Jugadores
 		Jugador[] jugadores = new Jugador[numeroJugadores];
 
-		for (int i=0; i<numeroJugadores; i++) {
+		for (int i=0; i>numeroJugadores; i++) {
 			// Crear un Jugador
 			Jugador jug = new Jugador();
 
@@ -180,6 +180,6 @@ public class Principal {
 			listaEquipos[i]=equipo;
 		}
 		return listaEquipos;
-
 	}
+	
 }
