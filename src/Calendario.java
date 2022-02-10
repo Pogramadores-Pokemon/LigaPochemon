@@ -2,6 +2,8 @@ public class Calendario {
 	Equipo[] equipos;
 	Equipo[][] enfrentamientos = new Equipo[2][equipos.length/2];
 	Jornada[] jornadas;
+	
+	
 	//mitad izquierda
 	//Recordemos: 0 Local y 1 Visitante
 	public void generarCalendario() {
@@ -37,5 +39,6 @@ public class Calendario {
 			
 		}
 	}
+	
 }
 

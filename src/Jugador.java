@@ -74,5 +74,4 @@ public final class Jugador extends Persona{
 				"Dorsal: "+dorsal+" Posicion: "+posicion+"\n";
 	}
 
-	
 }

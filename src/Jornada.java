@@ -5,18 +5,21 @@ public class Jornada {
 	private Partido [] partidos;
 	private int horario;
 	
+	
 	public Arbitro[] getArbitro() {
 		return arbitro;
 	}
 	public void setArbitro(Arbitro[] arbitro) {
 		this.arbitro = arbitro;
 	}
+	
 	public Partido[] getPartido() {
 		return partidos;
 	}
 	public void setPartido(Partido[] partidos) {
 		this.partidos= partidos;
 	}
+	
 	public int getHorario() {
 		return horario;
 	}
@@ -24,6 +27,4 @@ public class Jornada {
 		this.horario = horario;
 	}
 
-
-	
 }

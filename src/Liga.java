@@ -7,6 +7,7 @@ public class Liga {
 	private Arbitro[] arbitros;
 	private Clasificacion clasificacion;
 	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -41,6 +42,5 @@ public class Liga {
 	public void setClasificacion(Clasificacion clasificacion) {
 		this.clasificacion = clasificacion;
 	}
-
 
 }

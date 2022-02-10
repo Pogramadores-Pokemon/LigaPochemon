@@ -43,5 +43,4 @@ public class Partido {
 		this.visitante = visitante;
 	}
 	
-
 }
