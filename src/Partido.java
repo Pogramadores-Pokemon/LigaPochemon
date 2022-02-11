@@ -1,34 +1,12 @@
 
 public class Partido {
-
-	private Arbitro [] arbitro;
-	private int favor;
-	private int contra;
 	private Equipo local;
 	private Equipo visitante;
+	private int gLocal;
+	private int gVisitante;
+	private Arbitro arbitro;
 	
 	
-	public Arbitro[] getArbitro() {
-		return arbitro;
-	}
-	public void setArbitro(Arbitro[] arbitro) {
-		this.arbitro = arbitro;
-	}
-	
-	public int getFavor() {
-		return favor;
-	}
-	public void setFavor(int favor) {
-		this.favor = favor;
-	}
-
-	public int getContra() {
-		return contra;
-	}
-	public void setContra(int contra) {
-		this.contra = contra;
-	}
-
 	public Equipo getLocal() {
 		return local;
 	}
@@ -41,6 +19,27 @@ public class Partido {
 	}
 	public void setVisitante(Equipo visitante) {
 		this.visitante = visitante;
+	}
+	
+	public int getgLocal() {
+		return gLocal;
+	}
+	public void setgLocal(int gLocal) {
+		this.gLocal = gLocal;
+	}
+	
+	public int getgVisitante() {
+		return gVisitante;
+	}
+	public void setgVisitante(int gVisitante) {
+		this.gVisitante = gVisitante;
+	}
+
+	public Arbitro getArbitro() {
+		return arbitro;
+	}
+	public void setArbitro(Arbitro arbitro) {
+		this.arbitro = arbitro;
 	}
 	
 }

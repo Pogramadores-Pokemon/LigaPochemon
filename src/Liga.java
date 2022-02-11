@@ -1,13 +1,21 @@
 
 public class Liga {
-	
 	private String nombre;
 	private Equipo[] equipos;
-	private Calendario calendario;
 	private Arbitro[] arbitros;
+	private Calendario calendario;
 	private Clasificacion clasificacion;
 	
 	
+	public Liga(String nombre, Equipo[] equipos, Arbitro[] arbitros) {
+		this.nombre=nombre;
+		this.equipos=equipos;
+		this.arbitros=arbitros;
+		
+		// Generamos calendario
+		calendario= new Calendario(this.equipos, this.arbitros);
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

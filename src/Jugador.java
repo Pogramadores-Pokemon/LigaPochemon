@@ -42,7 +42,6 @@ public final class Jugador extends Persona{
 			return "Juvenil";
 		default:
 			return "N/A";
-			
 		}
 	}
 	

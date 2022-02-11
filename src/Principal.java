@@ -1,25 +1,41 @@
 public class Principal {
 
 	public static void main(String[] args) {
-		int numJugadores=11;
-		int edad = (int) Math.floor(Math.random()*15)+4;
-		int alineacion = (int) Math.floor(Math.random()*3);
-		Equipo prueba1= new Equipo();
-		Jugador[] listaJugadores = crearJugadores(numJugadores, edad, prueba1, alineacion);
+		final int NUMEQUIPOS=20;
+		final int EDAD=12;
+		final int ALINEACION=1;
+		final String NOMBRELIGA="La SuperLiga";
+	
+		Equipo[] misEquipos = crearListaEquipos(NUMEQUIPOS, EDAD, ALINEACION);
+		Arbitro[] arbitros=null; //Crear generador de arbitros
 		
-		//Crear una Lista de Equipo
-		int numEquipos=12;
-		Equipo[] listaEquipos = crearEquipos(numEquipos, edad, alineacion);
+		// Lo que yo quiero
+		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
 
-		//Imprimimos los equipos
-		System.out.println("Numero de equipos: "+numEquipos);
-		for (Equipo e: listaEquipos) {
-			System.out.println(e.getNombre());
-		}
+
+		
+		
+		
+		
+//		int numJugadores=11;
+//		int edad = (int) Math.floor(Math.random()*15)+4;
+//		int alineacion = (int) Math.floor(Math.random()*3);
+//		Equipo prueba1= new Equipo();
+//		Jugador[] listaJugadores = crearJugadores(numJugadores, edad, prueba1, alineacion);
+//		
+//		//Crear una Lista de Equipo
+//		int numEquipos=12;
+//		Equipo[] listaEquipos = crearEquipos(numEquipos, edad, alineacion);
+//
+//		//Imprimimos los equipos
+//		System.out.println("Numero de equipos: "+numEquipos);
+//		for (Equipo e: listaEquipos) {
+//			System.out.println(e.getNombre());
+//		}
 	}
 	
 	
-	private static Jugador[] crearJugadores(int numeroJugadores, int edad, Equipo equipo, int alineacion) {
+	private static Jugador[] crearListaJugadores(int numeroJugadores, int edad, Equipo equipo, int alineacion) {
 
 		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "Leon", "Maya", "Lira", "Lucho",
 							"Liza", "Rizzo", "Nanci", "Kalm", "Serena", "Elio", "Selene", "Chase",
@@ -128,7 +144,7 @@ public class Principal {
 		return entrenador;
 	}
 	
-	private static Equipo[] crearEquipos(int numEquipos,int edad, int alineacion) {
+	private static Equipo[] crearListaEquipos(int numEquipos,int edad, int alineacion) {
 
 		String [] barrios = {"Kanto", "Johto", "Hoenn", "Sinnoh", "Teselia", "Unova", "Kalos", "Alola", "Galar",
 							 "Hisui", "Almia", "Aura"};
@@ -173,7 +189,7 @@ public class Principal {
 	
 			// Meter los jugadores
 			int numeroJugadores=(int) Math.floor(Math.random()*7)+15;
-			Jugador[] jugadores = crearJugadores(numeroJugadores,edad,equipo,alineacion);
+			Jugador[] jugadores = crearListaJugadores(numeroJugadores,edad,equipo,alineacion);
 			equipo.setJugadores(jugadores);
 	
 			// Meter el equipo en el array de equipos
