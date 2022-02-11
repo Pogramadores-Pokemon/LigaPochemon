@@ -45,8 +45,8 @@ public class Partido {
 	
 	@Override
 	public String toString() {
-		return this.local.getNombre()+" "+this.gLocal+":"
-				+this.gVisitante+" "+this.visitante.getNombre()
-				+", Arbitro: "+this.arbitro.getApellidos()+"\n";
+		return this.local+" ["+this.gLocal+":"
+				+this.gVisitante+"] "+this.visitante
+				+"Arbitro: "+this.arbitro.getNombre()+" "+this.arbitro.getApellidos()+"\n";
 	}
 }

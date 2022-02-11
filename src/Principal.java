@@ -4,7 +4,7 @@ public class Principal {
 		final int NUMEQUIPOS=20;
 		final int EDAD=12;
 		final int ALINEACION=1;
-		final String NOMBRELIGA="La SuperLiga";
+		final String NOMBRELIGA="Liga Pochemon";
 	
 		Equipo[] misEquipos = crearListaEquipos(NUMEQUIPOS, EDAD, ALINEACION);
 		Arbitro[] arbitros = new Arbitro[NUMEQUIPOS/2];
@@ -17,6 +17,7 @@ public class Principal {
 		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
 		System.out.println(miLiga.getCalendario());
 
+		
 
 		
 		
@@ -55,7 +56,7 @@ public class Principal {
 		// Estructura de Array de Jugadores
 		Jugador[] jugadores = new Jugador[numeroJugadores];
 
-		for (int i=0; i>numeroJugadores; i++) {
+		for (int i=0; i<numeroJugadores; i++) {
 			// Crear un Jugador
 			Jugador jug = new Jugador();
 
@@ -168,9 +169,7 @@ public class Principal {
 		//Apellidos
 		numero = (int) Math.floor(Math.random()*apellidos.length);
 		String apellido1 = apellidos[numero];
-		numero = (int) Math.floor(Math.random()*apellidos.length);
-		String apellido2 = apellidos[numero];
-		arbitro.setApellidos(apellido1+" "+apellido2);
+		arbitro.setApellidos(apellido1);
 	
 		//Edad
 		int edad = (int) Math.floor(Math.random()*47)+18;
@@ -226,7 +225,7 @@ public class Principal {
 			equipo.setEntrenador(entrenador);
 	
 			// Meter los jugadores
-			int numeroJugadores=(int) Math.floor(Math.random()*7)+15;
+			int numeroJugadores=11;
 			Jugador[] jugadores = crearListaJugadores(numeroJugadores,edad,equipo,alineacion);
 			equipo.setJugadores(jugadores);
 	

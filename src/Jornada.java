@@ -32,7 +32,7 @@ public class Jornada {
 	public String toString() {
 		String cadena="Jornada: \n";
 		for (int i=0; i<this.partidos.length; i++) {
-			cadena+=(i+1)+"ª "+this.partidos[i]+"\n";
+			cadena+=(i+1)+"ª Partido \n"+this.partidos[i]+"\n";
 		}
 		return cadena;
 	}
