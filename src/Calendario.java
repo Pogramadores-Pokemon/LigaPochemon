@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Calendario {
 	Jornada[] jornadas;
@@ -30,10 +31,12 @@ public class Calendario {
 				 // Partidos de ida
 				 partidosIda[j].setLocal(emparejamientos[0][j]);
 				 partidosIda[j].setVisitante(emparejamientos[1][j]);
+				 partidosIda[j].setArbitro(arbitros[j]);
 				 
 				 // Partidos de vuelta
 				 partidosVuelta[j].setLocal(emparejamientos[1][j]);
 				 partidosVuelta[j].setVisitante(emparejamientos[0][j]);
+				 partidosVuelta[j].setArbitro(arbitros[j]);
 			 }
 			 // Actualizamos jornadas
 			 jornadas[i].setPartido(partidosIda);
@@ -59,6 +62,7 @@ public class Calendario {
 					 auxEmp[0][1]=emparejamientos[2][k];
 				 }
 			 }
+			 emparejamientos=auxEmp;
 		 }
 
 	}
@@ -68,6 +72,17 @@ public class Calendario {
 	}
 	public void setJornadas(Jornada[] jornadas) {
 		this.jornadas = jornadas;
+	}
+
+	
+	@Override
+	public String toString() {
+		String cadena="Calendario de Liga: ";
+		for (int i=0; i<this.jornadas.length; i++) {
+			cadena+=(i+1)+"ª "+this.jornadas[i]+"\n";
+		}
+		
+		return cadena;
 	}
 	
 	

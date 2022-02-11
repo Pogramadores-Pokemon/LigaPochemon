@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Jornada {
 	private Partido [] partidos;
@@ -25,5 +26,16 @@ public class Jornada {
 	public void setHorario(int horario) {
 		this.horario = horario;
 	}
+	
+	
+	@Override
+	public String toString() {
+		String cadena="Jornada: \n";
+		for (int i=0; i<this.partidos.length; i++) {
+			cadena+=(i+1)+"ª "+this.partidos[i]+"\n";
+		}
+		return cadena;
+	}
 
+	
 }

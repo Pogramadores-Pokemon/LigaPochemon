@@ -7,10 +7,15 @@ public class Principal {
 		final String NOMBRELIGA="La SuperLiga";
 	
 		Equipo[] misEquipos = crearListaEquipos(NUMEQUIPOS, EDAD, ALINEACION);
-		Arbitro[] arbitros=null; //Crear generador de arbitros
+		Arbitro[] arbitros = new Arbitro[NUMEQUIPOS/2];
+		
+		for(int i=0; i<arbitros.length; i++) {
+			arbitros[i] = crearArbitro();
+		}
 		
 		// Lo que yo quiero
 		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
+		System.out.println(miLiga.getCalendario());
 
 
 		
@@ -143,7 +148,40 @@ public class Principal {
 	
 		return entrenador;
 	}
+
+	private static Arbitro crearArbitro() {
+		//Listado de Nombres, Apellidos, Posiciones para generador random
+		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Cipres", "Kukui", "Magnolia",
+							"Cio", "Nereida", "Lulu", "Chris", "Kiawe"};
 	
+		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragon", "Electrico","Fuego","Fantasma",
+							  "Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca",
+							  "Siniestro", "Tierra", "Veneno", "Volador"};
+	
+		Arbitro arbitro = new Arbitro();
+	
+		//Nombre
+		int numero = (int) Math.floor(Math.random()*nombres.length);
+		String nombre = nombres[numero];
+		arbitro.setNombre(nombre);
+	
+		//Apellidos
+		numero = (int) Math.floor(Math.random()*apellidos.length);
+		String apellido1 = apellidos[numero];
+		numero = (int) Math.floor(Math.random()*apellidos.length);
+		String apellido2 = apellidos[numero];
+		arbitro.setApellidos(apellido1+" "+apellido2);
+	
+		//Edad
+		int edad = (int) Math.floor(Math.random()*47)+18;
+		arbitro.setEdad(edad);
+		//Licencia
+		int registro = (int) Math.floor(Math.random()*100000);
+		arbitro.setRegistro(registro);
+	
+		return arbitro;
+	}
+
 	private static Equipo[] crearListaEquipos(int numEquipos,int edad, int alineacion) {
 
 		String [] barrios = {"Kanto", "Johto", "Hoenn", "Sinnoh", "Teselia", "Unova", "Kalos", "Alola", "Galar",
@@ -197,5 +235,4 @@ public class Principal {
 		}
 		return listaEquipos;
 	}
-	
 }
