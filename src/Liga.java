@@ -11,6 +11,7 @@ public class Liga {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
+		nombre = "Liga Pochemon";
 		this.nombre = nombre;
 	}
 	public Equipo[] getEquipos() {
