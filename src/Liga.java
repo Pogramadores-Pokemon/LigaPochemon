@@ -1,12 +1,21 @@
 
 public class Liga {
-	
 	private String nombre;
 	private Equipo[] equipos;
-	private Calendario calendario;
 	private Arbitro[] arbitros;
+	private Calendario calendario;
 	private Clasificacion clasificacion;
 	
+	
+	public Liga(String nombre, Equipo[] equipos, Arbitro[] arbitros) {
+		this.nombre=nombre;
+		this.equipos=equipos;
+		this.arbitros=arbitros;
+		
+		// Generamos calendario
+		calendario= new Calendario(this.equipos, this.arbitros);
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -14,30 +23,33 @@ public class Liga {
 		nombre = "Liga Pochemon";
 		this.nombre = nombre;
 	}
+
 	public Equipo[] getEquipos() {
 		return equipos;
 	}
 	public void setEquipos(Equipo[] equipos) {
 		this.equipos = equipos;
 	}
+
 	public Calendario getCalendario() {
 		return calendario;
 	}
 	public void setCalendario(Calendario calendario) {
 		this.calendario = calendario;
 	}
+
 	public Arbitro[] getArbitros() {
 		return arbitros;
 	}
 	public void setArbitros(Arbitro[] arbitros) {
 		this.arbitros = arbitros;
 	}
+
 	public Clasificacion getClasificacion() {
 		return clasificacion;
 	}
 	public void setClasificacion(Clasificacion clasificacion) {
 		this.clasificacion = clasificacion;
 	}
-
 
 }

@@ -4,6 +4,7 @@ public abstract class Persona {
 	private String apellidos;
 	private int edad;
 	
+	
 	public String getNombre() {
 		return nombre;
 	}

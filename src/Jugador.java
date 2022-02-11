@@ -42,7 +42,6 @@ public final class Jugador extends Persona{
 			return "Juvenil";
 		default:
 			return "N/A";
-			
 		}
 	}
 	
@@ -71,8 +70,7 @@ public final class Jugador extends Persona{
 	public String toString() {
 		return super.toString()+", "+categoria+"\n"+
 				"Equipo: "+equipo.getNombre()+"\n"+
-				"Dorsal: "+dorsal+" Posición: "+posicion+"\n";
+				"Dorsal: "+dorsal+" Posicion: "+posicion+"\n";
 	}
 
-	
 }
