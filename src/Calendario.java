@@ -29,17 +29,21 @@ public class Calendario {
 			 
 			 for(int j=0; j<numPartidos; j++) {
 				 // Partidos de ida
+				 partidosIda[j] = new Partido();
 				 partidosIda[j].setLocal(emparejamientos[0][j]);
 				 partidosIda[j].setVisitante(emparejamientos[1][j]);
 				 partidosIda[j].setArbitro(arbitros[j]);
 				 
 				 // Partidos de vuelta
+				 partidosVuelta[j] = new Partido();
 				 partidosVuelta[j].setLocal(emparejamientos[1][j]);
 				 partidosVuelta[j].setVisitante(emparejamientos[0][j]);
 				 partidosVuelta[j].setArbitro(arbitros[j]);
 			 }
 			 // Actualizamos jornadas
+			 jornadas[i] = new Jornada();
 			 jornadas[i].setPartido(partidosIda);
+			 jornadas[numJornadas-1-i] = new Jornada();
 			 jornadas[numJornadas-1-i].setPartido(partidosVuelta);
 			 
 			 // Rotamos el array doble
@@ -59,7 +63,7 @@ public class Calendario {
 				 if(k>0 && k<numPartidos-1) {
 					 auxEmp[1][k-1]=emparejamientos[1][k];
 				 }else {
-					 auxEmp[0][1]=emparejamientos[2][k];
+					 auxEmp[0][1]=emparejamientos[1][k];
 				 }
 			 }
 			 emparejamientos=auxEmp;

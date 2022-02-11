@@ -42,4 +42,11 @@ public class Partido {
 		this.arbitro = arbitro;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return this.local.getNombre()+" "+this.gLocal+":"
+				+this.gVisitante+" "+this.visitante.getNombre()
+				+", Arbitro: "+this.arbitro.getApellidos()+"\n";
+	}
 }
