@@ -2,7 +2,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		final int NUMEQUIPOS=20;
-		final int JORNADASJUGADAS=1;
+		final int JORNADASJUGADAS=4;
 		final int EDAD=12;
 		final int ALINEACION=1;
 		final String NOMBRELIGA="Liga Pochemon";
@@ -249,7 +249,7 @@ public class Principal {
 		
 		for (int i=0; i<numJornadas && i<totalJornadas; i++) {
 			System.out.println("Jornada: "+(i+1));
-			Partido[] partidos = jornadas[i].getPartido();
+			Partido[] partidos = jornadas[i].getPartidos();
 			for (Partido par : partidos) {
 				int golesLocales = (int)Math.floor((Math.random())*MAXGOLES);
 				int golesVisitantes = (int)Math.floor((Math.random())*MAXGOLES);

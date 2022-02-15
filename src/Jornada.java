@@ -7,10 +7,10 @@ public class Jornada {
 	private boolean isTerminada=false;
 
 	
-	public Partido[] getPartido() {
+	public Partido[] getPartidos() {
 		return partidos;
 	}
-	public void setPartido(Partido[] partidos) {
+	public void setPartidos(Partido[] partidos) {
 		this.partidos= partidos;
 	}
 	

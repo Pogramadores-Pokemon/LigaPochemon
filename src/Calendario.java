@@ -42,9 +42,9 @@ public class Calendario {
 			 }
 			 // Actualizamos jornadas
 			 jornadas[i] = new Jornada();
-			 jornadas[i].setPartido(partidosIda);
+			 jornadas[i].setPartidos(partidosIda);
 			 jornadas[numJornadas-1-i] = new Jornada();
-			 jornadas[numJornadas-1-i].setPartido(partidosVuelta);
+			 jornadas[numJornadas-1-i].setPartidos(partidosVuelta);
 			 
 			 // Rotamos el array doble
 			 Equipo[][] auxEmp = new Equipo[2][numPartidos];
