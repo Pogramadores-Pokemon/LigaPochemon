@@ -78,7 +78,6 @@ public class Calendario {
 		this.jornadas = jornadas;
 	}
 
-	
 	@Override
 	public String toString() {
 		String cadena="Calendario de Liga: ";

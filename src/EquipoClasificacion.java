@@ -93,8 +93,15 @@ public class EquipoClasificacion {
 
 	@Override
 	public String toString() {
-		return equipo.getNombre()+"\t\t\t"+jugados+"\t"+ganados+"\t"+empatados+"\t"+perdidos+"\t"+
-								gFavor+"\t"+gContra+"\t"+dGoles+"\t"+puntos+"\n";
+		String cadena=equipo.getNombre();
+		int longitud=cadena.length();
+		int tabuladores=6;
+		int tabEquipo=longitud/8;
+		for(int i=0; i<tabuladores-tabEquipo; i++) {
+			cadena+="\t";
+		}
+		cadena+=jugados+"\t"+ganados+"\t"+empatados+"\t"+perdidos+"\t"+gFavor+"\t"+gContra+"\t"+dGoles+"\t"+puntos+"\n";
+		return cadena;
 	}
-	
+
 }

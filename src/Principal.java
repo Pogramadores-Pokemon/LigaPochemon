@@ -2,6 +2,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		final int NUMEQUIPOS=20;
+		final int JORNADASJUGADAS=1;
 		final int EDAD=12;
 		final int ALINEACION=1;
 		final String NOMBRELIGA="Liga Pochemon";
@@ -16,8 +17,9 @@ public class Principal {
 		// Lo que yo quiero
 		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
 		System.out.println(miLiga.getCalendario());
-		
 		Calendario miCalendario=miLiga.getCalendario();
+		generarPartidos(miCalendario, JORNADASJUGADAS);
+		
 		Clasificacion clasificacion = new Clasificacion(misEquipos,miCalendario);
 		System.out.println(clasificacion);
 
@@ -44,7 +46,6 @@ public class Principal {
 	
 	
 	private static Jugador[] crearListaJugadores(int numeroJugadores, int edad, Equipo equipo, int alineacion) {
-
 		String[] nombres = {"Rojo", "Eco", "Cris", "Bruno", "Aura", "Hoja", "Leon", "Maya", "Lira", "Lucho",
 							"Liza", "Rizzo", "Nanci", "Kalm", "Serena", "Elio", "Selene", "Chase",
 							"Elaine", "Victor", "Gloria", "Luka", "Kira", "Misty", "Brock", "Tracey",
@@ -116,6 +117,7 @@ public class Principal {
 		return jugadores;
 	}
 
+
 	private static Entrenador crearEntrenador(Equipo equipo) {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
 		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Cipres", "Kukui", "Magnolia",
@@ -152,6 +154,7 @@ public class Principal {
 		return entrenador;
 	}
 
+
 	private static Arbitro crearArbitro() {
 		//Listado de Nombres, Apellidos, Posiciones para generador random
 		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Cipres", "Kukui", "Magnolia",
@@ -182,6 +185,7 @@ public class Principal {
 	
 		return arbitro;
 	}
+
 
 	private static Equipo[] crearListaEquipos(int numEquipos,int edad, int alineacion) {
 
@@ -235,5 +239,25 @@ public class Principal {
 			listaEquipos[i]=equipo;
 		}
 		return listaEquipos;
+	}
+
+
+	private static void generarPartidos(Calendario calendario, int numJornadas) {
+		final int MAXGOLES=7;
+		Jornada[] jornadas=calendario.getJornadas();
+		int totalJornadas=jornadas.length;
+		
+		for (int i=0; i<numJornadas && i<totalJornadas; i++) {
+			System.out.println("Jornada: "+(i+1));
+			Partido[] partidos = jornadas[i].getPartido();
+			for (Partido par : partidos) {
+				int golesLocales = (int)Math.floor((Math.random())*MAXGOLES);
+				int golesVisitantes = (int)Math.floor((Math.random())*MAXGOLES);
+				par.setgLocal(golesLocales);
+				par.setgVisitante(golesVisitantes);
+				System.out.println(par);
+			}
+			jornadas[i].terminar();
+		}
 	}
 }

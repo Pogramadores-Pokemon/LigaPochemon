@@ -4,7 +4,8 @@ public class Jornada {
 	private Partido [] partidos;
 	private Arbitro [] arbitro;
 	private int horario;
-	
+	private boolean isTerminada=false;
+
 	
 	public Partido[] getPartido() {
 		return partidos;
@@ -27,6 +28,15 @@ public class Jornada {
 		this.horario = horario;
 	}
 	
+	public boolean isTerminada() {
+		return isTerminada;
+	}
+	public void setTerminada(boolean terminada) {
+		this.isTerminada=isTerminada;
+	}
+	public void terminar() {
+		this.isTerminada=true;
+	}
 	
 	@Override
 	public String toString() {
