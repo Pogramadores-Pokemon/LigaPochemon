@@ -63,7 +63,7 @@ public class Equipo {
 	public String toString() {
 		return "Nombre del Equipo: "+this.nombre+"\n"+
 				"Club: "+this.club+"\n"+
-				"Entrenador"+"\n"+
+				"Entrenador: "+"\n"+
 				entrenador+"\n"+
 				"Plantilla: "+"\n"+
 				toStringJugadores(this.jugadores);

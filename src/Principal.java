@@ -16,8 +16,10 @@ public class Principal {
 		// Lo que yo quiero
 		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
 		System.out.println(miLiga.getCalendario());
-
 		
+		Calendario miCalendario=miLiga.getCalendario();
+		Clasificacion clasificacion = new Clasificacion(misEquipos,miCalendario);
+		System.out.println(clasificacion);
 
 		
 		
