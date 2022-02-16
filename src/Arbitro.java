@@ -1,21 +1,20 @@
- 
-public class Arbitro extends Persona{
-	private int registro;
-	private Equipo equipo;
-	
-	
-	public int getRegistro() {
-		return registro;
+
+public class Arbitro extends Persona {
+
+	int licencia;
+
+	public void setLicencia(int licencia) {
+		this.licencia = licencia;
 	}
-	public void setRegistro(int registro) {
-		this.registro = registro;
+
+	public int getLicencia() {
+		return licencia;
 	}
-	
-	public Equipo getEquipo() {
-		return equipo;
+
+	@Override
+	public String toString() {
+		return "Arbitro [licencia=" + licencia + ", getNombre()=" + getNombre() + ", getApellidos()=" + getApellidos()
+				+ ", getEdad()=" + getEdad() + "]";
 	}
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
-	}
-	
+
 }
