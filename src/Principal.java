@@ -14,13 +14,10 @@ public class Principal {
 		}
 		
 		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
-		System.out.println(miLiga.getCalendario());
 		Calendario miCalendario = miLiga.getCalendario();
 		generarPartidos(miCalendario, JORNADASJUGADAS);
 		
-		
 		Clasificacion clasificacion = new Clasificacion(misEquipos, miCalendario);
-		System.out.println(clasificacion);
 	}
 
 	private static Jugador[] crearListaJugadores(int numeroJugadores, int edad, Equipo equipo) {
