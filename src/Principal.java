@@ -1,27 +1,72 @@
+import java.util.Scanner;
+
 public class Principal {
 
 	public static void main(String[] args) {
-
-		final int NUMEROEQUIPOS = 20;
-		final int EDAD = 12;
-		final String NOMBRELIGA = "La SuperLiga";
-		final int JORNADASJUGADAS = 15;
-		final int ALINEACION=1;
-
-		Equipo[] misEquipos = crearListaEquipos(NUMEROEQUIPOS, EDAD, ALINEACION);
+		
+		final int NUMEROEQUIPOS=4;
+		final int EDAD=(int) Math.floor((Math.random())*15)+4;
+		final String NOMBRELIGA="Liga Pochemon";
+		final int JORNADASJUGADAS=38;
+		final int ALINEACION=(int) Math.floor((Math.random())*3);
+		
+		Equipo[] equipos = crearListaEquipos(NUMEROEQUIPOS, EDAD, ALINEACION);
 		Arbitro[] arbitros = new Arbitro[NUMEROEQUIPOS / 2]; 
 		for ( int i = 0; i < arbitros.length; i++) {
 			arbitros[i] = crearArbitro();
 		}
+		Liga liga = new Liga(NOMBRELIGA, equipos, arbitros);
+		Calendario calendario = liga.getCalendario();
+		Clasificacion clasificacion = new Clasificacion(equipos, calendario);	
 
-		Liga miLiga = new Liga(NOMBRELIGA, misEquipos, arbitros);
-		Calendario miCalendario = miLiga.getCalendario();
-		//Esto se ha comentado porque imprime las jornadas (entrar dentro de
-		// jornadas para verlo)
-//		generarPartidos(miCalendario, JORNADASJUGADAS);
-
-		Clasificacion clasificacion = new Clasificacion(misEquipos, miCalendario);
+		
+		
+		Scanner sc=new Scanner(System.in);
+		int opcion=0;
+		while(opcion!=4) {
+			limpiarPantalla();
+			imprimirMenu();
+			opcion=leerEntrada();
+			
+		switch(opcion) {
+		case 1:
+			System.out.println();
+			for (Equipo e : equipos) {
+				System.out.println(e.toString());
+			}
+			break;
+		case 2:
+			System.out.println();
+			System.out.println(calendario.toString());
+			break;
+		case 3:
+			System.out.println();
+			System.out.println(liga.getClasificacion());
+			System.out.println();
+			generarPartidos(calendario, JORNADASJUGADAS);
+			break;
+		case 4:
+			System.out.println("   ╔════════════════════════════╗");
+			System.out.println("   ║       ¡Hasta pronto!       ║");
+			System.out.println("   ╚════════════════════════════╝");
+			break;
+		default:
+			System.out.println("   ╔═════════════════════════════╗");
+			System.out.println("   ║  Esta opción no es válida.  ║");
+			System.out.println("   ╚═════════════════════════════╝");
+		}
+		
+		if (opcion!=4) {
+			System.out.println();
+			System.out.println();
+			System.out.println("Presiona Enter para continuar.");
+			pressEnter();
+		}	
 	}
+}
+		
+
+
 
 	private static Jugador[] crearListaJugadores(int numeroJugadores, int edad, Equipo equipo, int alineacion) {
 
@@ -34,34 +79,27 @@ public class Principal {
 				"Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca",
 				"Siniestro", "Tierra", "Veneno", "Volador"};
 
-		//		String[] posiciones = {"Portero/a","Defensa","Centrocampista","Delantero/a"};
-
-
 		Jugador[] listaJugadores = new Jugador[numeroJugadores];
 
-		for (int i = 0; i < numeroJugadores; i++) {
+		for (int i=0;i<numeroJugadores;i++) {
 			Jugador jug = new Jugador();
 
 			//Creamos los nombres de los jugadores
-			int numero = (int) Math.floor((Math.random()) * nombres.length);
+			int numero=(int) Math.floor((Math.random())*nombres.length);
 			jug.setNombre(nombres[numero]);
 
 			//Creamos los apellidos de los jugadores
-			numero = (int) Math.floor((Math.random()) * apellidos.length);
-			String apellido1 = apellidos[numero];
-			numero = (int) Math.floor((Math.random()) * apellidos.length);
-			String apellido2 = apellidos[numero];
-			jug.setApellidos(apellido1 + " " + apellido2);
-
-			//			//Creamos la posicion de los jugadores
-			//			numero = (int) Math.floor((Math.random()) * posiciones.length);
-			//			jug.setPosicion(posiciones[numero]);
+			numero=(int) Math.floor((Math.random())*apellidos.length);
+			String apellido1=apellidos[numero];
+			numero=(int) Math.floor((Math.random())*apellidos.length);
+			String apellido2=apellidos[numero];
+			jug.setApellidos(apellido1+" "+apellido2);
 
 			//Ponemos la edad que hemos definido arriba
 			jug.setEdad(edad);
 
 			//Creamos el dorsal
-			jug.setDorsal(i + 1);
+			jug.setDorsal(i+1);
 
 			//Anadimos el equipo
 			jug.setEquipo(equipo);
@@ -93,65 +131,66 @@ public class Principal {
 				jug.setPosicion(alineacion3[i]);
 				break;
 			}
-
-			listaJugadores[i] = jug;
+			listaJugadores[i]=jug;
 		}
 		return listaJugadores;
-
 	}
-
 	private static Equipo[] crearListaEquipos(int numeroEquipos, int edad, int alineacion) {
 
-		String[]  barrios = {"Kanto", "Johto", "Hoenn", "Sinnoh", "Teselia", "Unova", "Kalos", 
+		String[]  regiones = {"Kanto", "Johto", "Hoenn", "Sinnoh", "Teselia", "Unova", "Kalos", 
 				"Alola", "Galar", "Hisui", "Almia", "Aura"};
+		
 		String[] mascotas = {"Los Dratinis", "Los Stantlers", "Los Absols", "Los Luxios", 
 				"Los Trubbishes", "Los Kricketots", "Los Panchams", "Los Oricorios", 
 				"Los Yampers", "Los Eevees", "Los Drifloons", "Los Emolgas"};
 
+		String [] clubs = {"Kanto Balón Pai", "Johto Futball Clup","Union de Hoenn","S de Sinnoh F.C","Teselia de Desta",
+				"Unova Deportiva","Real Kalos furbo","Clú Dah Lola","Galar Galante Club",
+				"Unión Pijos de Hisui ","Rial D'almia F.C.","Boreales Du Aura"};
 
+		
 		Equipo[] equipos = new Equipo[numeroEquipos];
 
 		//La edad ha de ser siempre la misma
-		for (int i = 0; i < numeroEquipos; i++) {
+		for (int i=0;i<numeroEquipos;i++) {
 			Equipo equipo = new Equipo();
 
-			//Nombre del equipo y del club al que pertenece
+			//Nombre del equipo
 			String nombreEquipo;
-			int numero = (int) Math.floor((Math.random()) * mascotas.length);
+			int numero=(int) Math.floor((Math.random())*mascotas.length);
 			String mascota = mascotas[numero];
-			numero = (int) Math.floor((Math.random()) * barrios.length);
-			String barrio = barrios[numero];
-			equipo.setClub(barrio + " F.C.");
-
-			if(barrio.startsWith("El ")) {
-				barrio = barrio.substring(3);
-				nombreEquipo = mascota + " del " + barrio;
-			}else {
-				nombreEquipo = mascota + " de " + barrio;
-			}
+			numero=(int) Math.floor((Math.random())*regiones.length);
+			String region=regiones[numero];
+			
+			nombreEquipo=mascota+" de "+region;
 			equipo.setNombre(nombreEquipo);
+			
+			//Club del equipo
+			numero=(int) Math.floor((Math.random())*clubs.length);
+			String club = clubs[numero];
+			equipo.setClub(club);
 
 			//Hacemos el entrenador
-			Entrenador entrenador = crearEntrenador(equipo);
+			Entrenador entrenador=crearEntrenador(equipo);
 			equipo.setEntrenador(entrenador);
 
 			//Creamos e introducimos a los jugadores
-			int numeroJugadores = 11;
-			Jugador[] listaJugadores = crearListaJugadores(numeroJugadores, edad, equipo, alineacion);
+			int numeroJugadores=11;
+			Jugador[] listaJugadores=crearListaJugadores(numeroJugadores, edad, equipo, alineacion);
 			equipo.setJugadores(listaJugadores);
 
 			//Lo anadimos al array
-			equipos[i] = equipo;
+			equipos[i]=equipo;
 
 
 		}
 		return equipos;
 	}
-
 	private static Entrenador crearEntrenador(Equipo equipo) {
 
 		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Cipres", "Kukui", 
 				"Magnolia", "Cio", "Nereida", "Lulu", "Chris", "Kiawe"};
+		
 		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragon", "Electrico","Fuego","Fantasma",
 				"Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca",
 				"Siniestro", "Tierra", "Veneno", "Volador"};
@@ -159,16 +198,16 @@ public class Principal {
 		Entrenador entrenador = new Entrenador();
 
 		//Nombre del entrenador
-		int numero = (int) Math.floor((Math.random()) * nombres.length);
-		String nombre = nombres[numero];
-		numero = (int) Math.floor((Math.random()) * apellidos.length);
-		String apellido = apellidos[numero];
+		int numero=(int) Math.floor((Math.random())*nombres.length);
+		String nombre=nombres[numero];
+		numero=(int) Math.floor((Math.random())*apellidos.length);
+		String apellido=apellidos[numero];
 
 		//Edad del entrenador
-		int edad = (int) Math.floor((Math.random()) * 48) + 18;
+		int edad=(int) Math.floor((Math.random())*48)+18;
 
 		//Licencia del entrenador
-		int licencia = (int) Math.floor((Math.random()) * 900000) + 100000;
+		int licencia=(int) Math.floor((Math.random())*900000)+100000;
 		entrenador.setNombre(nombre);
 		entrenador.setApellidos(apellido);
 		entrenador.setEdad(edad);
@@ -178,11 +217,11 @@ public class Principal {
 		return entrenador;
 
 	}
-
 	private static Arbitro crearArbitro() {
 
 		String[] nombres = {"Oak", "Elm", "Abedul", "Serbal", "Encina", "Cipres", "Kukui", 
 				"Magnolia", "Cio", "Nereida", "Lulu", "Chris", "Kiawe"};
+		
 		String[] apellidos = {"Acero", "Agua", "Bicho", "Dragon", "Electrico","Fuego","Fantasma",
 				"Hada", "Hielo", "Lucha", "Normal", "Planta", "Psiquico", "Roca",
 				"Siniestro", "Tierra", "Veneno", "Volador"};
@@ -190,16 +229,16 @@ public class Principal {
 		Arbitro arbitro = new Arbitro();
 
 		//Nombre del arbitro
-		int numero = (int) Math.floor((Math.random()) * nombres.length);
+		int numero=(int) Math.floor((Math.random())*nombres.length);
 		String nombre = nombres[numero];
-		numero = (int) Math.floor((Math.random()) * apellidos.length);
+		numero=(int) Math.floor((Math.random())*apellidos.length);
 		String apellido = apellidos[numero];
 
 		//Edad del arbitro
-		int edad = (int) Math.floor((Math.random()) * 48) + 18;
+		int edad=(int) Math.floor((Math.random())*48)+18;
 
 		//Licencia del arbitro
-		int licencia = (int) Math.floor((Math.random()) * 900000) + 100000;
+		int licencia=(int) Math.floor((Math.random())*900000)+100000;
 		arbitro.setNombre(nombre);
 		arbitro.setApellidos(apellido);
 		arbitro.setEdad(edad);
@@ -209,26 +248,68 @@ public class Principal {
 
 	}
 
-
 	private static void generarPartidos(Calendario calendario, int numeroJornadas) {
 
-		final int MAXGOLES = 7;
-		Jornada[] jornadas = calendario.getJornadas();
-		int totalJornadas = jornadas.length;
+		final int MAXGOLES=7;
+		Jornada[] jornadas=calendario.getJornadas();
+		int totalJornadas=jornadas.length;
 
-		for (int i = 0; i < numeroJornadas && i < totalJornadas; i++) {
-			System.out.println("Jornada: " + (i + 1));
-			Partido[] partidos = jornadas[i].getPartidos();
+		for (int i=0;i<numeroJornadas && i<totalJornadas;i++) {
+			System.out.println("Jornada: "+(i + 1));
+			Partido[] partidos=jornadas[i].getPartidos();
 			for (Partido par : partidos) {
-				int golesLocales = (int)Math.floor((Math.random()) * MAXGOLES);
-				int golesVisitantes = (int)Math.floor((Math.random()) * MAXGOLES);
+				int golesLocales=(int)Math.floor((Math.random())*MAXGOLES);
+				int golesVisitantes=(int)Math.floor((Math.random())*MAXGOLES);
 				par.setgLocal(golesLocales);
 				par.setgVisitante(golesVisitantes);
 				System.out.println(par);
 			}
 			jornadas[i].terminar();
 		}
+	}
 
+	
+	public static void imprimirMenu() {
+		System.out.println();
+		System.out.println("\r\n"
+				+ "  ███████████████▀█████████████████████████████████████████████████████████\r\n"
+				+ "  █▄─▄███▄─▄█─▄▄▄▄██▀▄─████▄─▄▄─█─▄▄─█─▄▄▄─█─█─█▄─▄▄─█▄─▀█▀─▄█─▄▄─█▄─▀█▄─▄█\r\n"
+				+ "  ██─██▀██─██─██▄─██─▀─█████─▄▄▄█─██─█─███▀█─▄─██─▄█▀██─█▄█─██─██─██─█▄▀─██\r\n"
+				+ "  ▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▀▀▀▄▄▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▀▄▄▄▀▀▄▄▀");
+		System.out.println();
+		System.out.println("   	         ╔═════════════════════════════════════╗");
+		System.out.println(" 	         ║   Seleccione la opcion que desee:   ║");
+		System.out.println("  	         ║═════════════════════════════════════║");
+		System.out.println("  	         ║     1. Ver equipos.                 ║");
+		System.out.println(" 	         ║     2. Ver calendario.              ║");
+		System.out.println(" 	         ║     3. Clasificación actual.        ║");
+		System.out.println(" 	         ║     4. Salir.                       ║");
+		System.out.println("  	         ╚═════════════════════════════════════╝");
+		System.out.println();
+		System.out.println("  	             ╔═════════════════════════════╗");
+		System.out.println("  	             ║  Hecho por:                 ║");
+		System.out.println("  	             ║   · Alvaro Gonzalez         ║");
+		System.out.println("  	             ║   · Alejandro Pascual       ║");
+		System.out.println("  	             ║   · Manuel Recio            ║");
+		System.out.println("  	             ║   · Alejandro Cabrera       ║");
+		System.out.println("  	             ║   · Alicia Ruiznavarro      ║");
+		System.out.println("  	             ╚═════════════════════════════╝");
+	}
+	
+	
+	public static int leerEntrada() {
+		Scanner sc=new Scanner(System.in);
+		int num;
+		return num=sc.nextInt();
+	}
+	public static void pressEnter() {
+		Scanner sc=new Scanner(System.in);
+		sc.nextLine();
+	}
+	public static void limpiarPantalla() {
+		for (int i=0;i<200;i++) {
+			System.out.println();
+		}
 	}
 
 }

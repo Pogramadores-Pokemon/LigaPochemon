@@ -77,17 +77,15 @@ public class Calendario {
 	public Jornada[] getJornadas() {
 		return jornadas;
 	}
-
 	public void setJornadas(Jornada[] jornadas) {
 		this.jornadas = jornadas;
 	}
 
 	@Override
 	public String toString() {
-		String cadena = "Calendario de Liga: \n";
-		for (int i = 0; i < this.jornadas.length; i++)
-		{
-			cadena += (i + 1) + "ª " + this.jornadas[i] + "\n";
+		String cadena="Calendario de Liga: \n";
+		for (int i=0;i<this.jornadas.length;i++) {
+			cadena+=(i+1)+".a "+this.jornadas[i] + "\n";
 		}
 		return cadena;
 

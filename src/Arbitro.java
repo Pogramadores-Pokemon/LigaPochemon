@@ -6,7 +6,6 @@ public class Arbitro extends Persona {
 	public void setLicencia(int licencia) {
 		this.licencia = licencia;
 	}
-
 	public int getLicencia() {
 		return licencia;
 	}

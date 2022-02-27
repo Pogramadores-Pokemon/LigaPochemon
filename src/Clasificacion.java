@@ -113,9 +113,9 @@ public class Clasificacion {
 
 	@Override
 	public String toString() {
-		String cadena = "Pos\tEquipo\t\t\t\t\t\t" + "J\t" + "G\t" + "P\t" + "E\t" + "GF\t" + "GC\t" + "DG\t" + "Pts\n";
-		for (int i = 0; i < tabla.length; i++) {
-			cadena += (i + 1) + "\t" + tabla[i];
+		String cadena="Pos\tEquipo\t\t\t\t\t\t" + "J\t" + "G\t" + "P\t" + "E\t" + "GF\t" + "GC\t" + "DG\t" + "Pts\n";
+		for (int i=0;i<tabla.length; i++) {
+			cadena+=(i+1)+"\t"+tabla[i];
 		}
 		return cadena;
 	}

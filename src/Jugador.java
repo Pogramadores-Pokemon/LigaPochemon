@@ -6,6 +6,7 @@ public class Jugador extends Persona{
 	private String categoria;
 	private Equipo equipo;
 	
+	
 	@Override
 	public void setEdad(int edad){
 		super.setEdad(edad);
@@ -15,14 +16,22 @@ public class Jugador extends Persona{
 	public void setDorsal(int dorsal) {
 		this.dorsal = dorsal;
 	}
+	public int getDorsal() {
+		return dorsal;
+	}
+
 	public void setPosicion(String posicion) {
 		this.posicion = posicion;
 	}
+	public String getPosicion() {
+		return posicion;
+	}
+	
 	private String setCategoria(int edad) {
 		switch (edad) {
 		case 4:
 		case 5:
-			return "Chupetín";
+			return "Chupetin";
 		case 6:
 		case 7:
 			return "Prebenjamin";
@@ -31,7 +40,7 @@ public class Jugador extends Persona{
 			return "Benjamin";
 		case 10:
 		case 11:
-			return "Alevín";
+			return "Alevin";
 		case 12:
 		case 13:
 			return "Infantil";
@@ -48,18 +57,12 @@ public class Jugador extends Persona{
 		
 		}
 	}
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
-	}
-
-	public int getDorsal() {
-		return dorsal;
-	}
-	public String getPosicion() {
-		return posicion;
-	}
 	public String getCategoria() {
 		return categoria;
+	}
+	
+	public void setEquipo(Equipo equipo) {
+		this.equipo = equipo;
 	}
 	public Equipo getEquipo() {
 		return equipo;
@@ -67,10 +70,10 @@ public class Jugador extends Persona{
 
 	@Override
 	public String toString() {
-		return super.toString() + //Imprimimos el 'toString' de Persona
-				"Categoria: " + categoria + "\n" +				
-				"Equipo: " + equipo.getNombre() + "\n" +
-				"Posición: " + posicion + ", Dorsal: " + dorsal + "\n";
+		return "◌ "+super.toString() + //Imprimimos el 'toString' de Persona
+				"Categoria: "+categoria+"\n" +				
+				"Equipo: "+equipo.getNombre()+"\n" +
+				"Posicion: "+posicion+", Dorsal: "+dorsal+"\n"+"\n";
 	}
 	
 }

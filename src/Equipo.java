@@ -7,33 +7,37 @@ public class Equipo {
 	private Entrenador entrenador;
 	private Jugador[] jugadores;
 
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public void setClub(String club) {
-		this.club = club;
-	}
-	public void setEquipacion(String equipacion) {
-		this.equipacion = equipacion;
-	}
-	public void setEntrenador(Entrenador entrenador) {
-		this.entrenador = entrenador;
-	}
-	public void setJugadores(Jugador[] jugadores) {
-		this.jugadores = jugadores;
-	}
-
 	public String getNombre() {
 		return nombre;
+	}
+
+	public void setClub(String club) {
+		this.club = club;
 	}
 	public String getClub() {
 		return club;
 	}
+
+	public void setEquipacion(String equipacion) {
+		this.equipacion = equipacion;
+	}
 	public String getEquipacion() {
 		return equipacion;
 	}
+
+	public void setEntrenador(Entrenador entrenador) {
+		this.entrenador = entrenador;
+	}
 	public Entrenador getEntrenador() {
 		return entrenador;
+	}
+
+	public void setJugadores(Jugador[] jugadores) {
+		this.jugadores = jugadores;
 	}
 	public Jugador[] getJugadores() {
 		return jugadores;
@@ -50,9 +54,9 @@ public class Equipo {
 	
 	@Override
 	public String toString() {
-		return "Nombre equipo: " + nombre + ", Club: " + club + "\n" +
-			   "Entrenador: " + entrenador.getNombre() + " " + entrenador.getApellidos() + "\n" +
-				toStringListaJugadores();
+		return "    Nombre equipo: "+nombre+", Club: "+club+"\n" +
+			   "    Entrenador: "+entrenador.getNombre()+" "+entrenador.getApellidos()+"\n"+
+			   toStringListaJugadores();
 
 	}
 

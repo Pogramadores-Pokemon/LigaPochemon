@@ -15,54 +15,61 @@ public class EquipoClasificacion {
 	public void setEquipo(Equipo equipo) {
 		this.equipo = equipo;
 	}
-	public void setJugados(int jugados) {
-		this.jugados = jugados;
-	}
-	public void setGanados(int ganados) {
-		this.ganados = ganados;
-	}
-	public void setEmpatados(int empatados) {
-		this.empatados = empatados;
-	}
-	public void setPerdidos(int perdidos) {
-		this.perdidos = perdidos;
-	}
-	public void setgFavor(int gFavor) {
-		this.gFavor = gFavor;
-	}
-	public void setgContra(int gContra) {
-		this.gContra = gContra;
-	}
-	public void setdGoles(int dGoles) {
-		this.dGoles = dGoles;
-	}
-	public void setPuntos(int puntos) {
-		this.puntos = puntos;
-	}
-	
 	public Equipo getEquipo() {
 		return equipo;
+	}
+	
+	public void setJugados(int jugados) {
+		this.jugados = jugados;
 	}
 	public int getJugados() {
 		return jugados;
 	}
+	
+	public void setGanados(int ganados) {
+		this.ganados = ganados;
+	}
 	public int getGanados() {
 		return ganados;
+	}
+	
+	public void setEmpatados(int empatados) {
+		this.empatados = empatados;
 	}
 	public int getEmpatados() {
 		return empatados;
 	}
+	
+	public void setPerdidos(int perdidos) {
+		this.perdidos = perdidos;
+	}
 	public int getPerdidos() {
 		return perdidos;
+	}
+
+	public void setgFavor(int gFavor) {
+		this.gFavor = gFavor;
 	}
 	public int getgFavor() {
 		return gFavor;
 	}
+	
+	public void setgContra(int gContra) {
+		this.gContra = gContra;
+	}
 	public int getgContra() {
 		return gContra;
 	}
+	
+	public void setdGoles(int dGoles) {
+		this.dGoles = dGoles;
+	}
 	public int getdGoles() {
 		return dGoles;
+	}
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
 	}
 	public int getPuntos() {
 		return puntos;
@@ -97,15 +104,15 @@ public class EquipoClasificacion {
 	
 	@Override
 	public String toString() {
-		String cadena = equipo.getNombre();
-		int longitud = cadena.length();
-		int tabuladores = 6;
-		int tabEquipo = longitud / 8;
-		for (int i = 0; i < tabuladores - tabEquipo; i++) {
-			cadena += "\t";
+		String cadena= equipo.getNombre();
+		int longitud=cadena.length();
+		int tabuladores=6;
+		int tabEquipo=longitud/8;
+		for (int i=0;i<tabuladores-tabEquipo;i++) {
+			cadena+="\t";
 		}
-		cadena += jugados + "\t" + ganados + "\t" + perdidos + "\t" + empatados + "\t" + 
-				  gFavor + "\t" + gContra + "\t" + dGoles + "\t"+puntos + "\n";
+		cadena+=jugados+"\t"+ganados+"\t"+perdidos+"\t"+empatados+"\t" + 
+				  gFavor+"\t"+gContra+"\t"+ dGoles+"\t"+puntos +"\n";
 		return cadena;
 	}
 
