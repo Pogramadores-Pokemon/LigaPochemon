@@ -48,14 +48,14 @@ public class Principal {
 			System.out.println(clasificacion.toString());
 			break;
 		case 4:
-			System.out.println("   ╔════════════════════════════╗");
-			System.out.println("   ║       ¡Hasta pronto!       ║");
-			System.out.println("   ╚════════════════════════════╝");
+			System.out.println("   ==============================");
+			System.out.println("   |       ¡Hasta pronto!       |");
+			System.out.println("   ==============================");
 			break;
 		default:
-			System.out.println("   ╔═════════════════════════════╗");
-			System.out.println("   ║  Esta opción no es válida.  ║");
-			System.out.println("   ╚═════════════════════════════╝");
+			System.out.println("   ==============================");
+			System.out.println("   |  Esta opción no es válida.  |");
+			System.out.println("   ==============================");
 		}
 		
 		if (opcion!=4) {
@@ -67,8 +67,6 @@ public class Principal {
 	}
 }
 		
-
-
 
 	private static Jugador[] crearListaJugadores(int numeroJugadores, int edad, Equipo equipo, int alineacion) {
 
@@ -273,29 +271,26 @@ public class Principal {
 	
 	public static void imprimirMenu() {
 		System.out.println();
-		System.out.println("\r\n"
-				+ "  ███████████████▀█████████████████████████████████████████████████████████\r\n"
-				+ "  █▄─▄███▄─▄█─▄▄▄▄██▀▄─████▄─▄▄─█─▄▄─█─▄▄▄─█─█─█▄─▄▄─█▄─▀█▀─▄█─▄▄─█▄─▀█▄─▄█\r\n"
-				+ "  ██─██▀██─██─██▄─██─▀─█████─▄▄▄█─██─█─███▀█─▄─██─▄█▀██─█▄█─██─██─██─█▄▀─██\r\n"
-				+ "  ▀▄▄▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▄▄▄▀▀▀▄▄▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▀▄▄▄▀▀▄▄▀");
+		System.out.println("                               L I G A");
+		System.out.println("                            P O C H E M O N ");
 		System.out.println();
-		System.out.println("   	         ╔═════════════════════════════════════╗");
-		System.out.println(" 	         ║   Seleccione la opcion que desee:   ║");
-		System.out.println("  	         ║═════════════════════════════════════║");
-		System.out.println("  	         ║     1. Ver equipos.                 ║");
-		System.out.println(" 	         ║     2. Ver calendario.              ║");
-		System.out.println(" 	         ║     3. Clasificación actual.        ║");
-		System.out.println(" 	         ║     4. Salir.                       ║");
-		System.out.println("  	         ╚═════════════════════════════════════╝");
+		System.out.println("   	         =======================================");
+		System.out.println(" 	         |   Seleccione la opcion que desee:   |");
+		System.out.println("  	         |=====================================|");
+		System.out.println("  	         |     1. Ver equipos.                 |");
+		System.out.println(" 	         |     2. Ver calendario.              |");
+		System.out.println(" 	         |     3. Clasificación actual.        |");
+		System.out.println(" 	         |     4. Salir.                       |");
+		System.out.println("  	         =======================================");
 		System.out.println();
-		System.out.println("  	             ╔═════════════════════════════╗");
-		System.out.println("  	             ║  Hecho por:                 ║");
-		System.out.println("  	             ║   · Alvaro Gonzalez         ║");
-		System.out.println("  	             ║   · Alejandro Pascual       ║");
-		System.out.println("  	             ║   · Manuel Recio            ║");
-		System.out.println("  	             ║   · Alejandro Cabrera       ║");
-		System.out.println("  	             ║   · Alicia Ruiznavarro      ║");
-		System.out.println("  	             ╚═════════════════════════════╝");
+		System.out.println("  	             ===============================");
+		System.out.println("  	             |  Hecho por:                 |");
+		System.out.println("  	             |   · Alvaro Gonzalez         |");
+		System.out.println("  	             |   · Alejandro Pascual       |");
+		System.out.println("  	             |   · Manuel Recio            |");
+		System.out.println("  	             |   · Alejandro Cabrera       |");
+		System.out.println("  	             |   · Alicia Ruiznavarro      |");
+		System.out.println("  	             ===============================");
 	}
 	
 	
