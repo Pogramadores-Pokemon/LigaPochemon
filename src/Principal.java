@@ -17,6 +17,9 @@ public class Principal {
 		}
 		Liga liga = new Liga(NOMBRELIGA, equipos, arbitros);
 		Calendario calendario = liga.getCalendario();
+		
+		generarPartidos(calendario, JORNADASJUGADAS);
+		
 		Clasificacion clasificacion = new Clasificacion(equipos, calendario);	
 
 		
@@ -41,9 +44,8 @@ public class Principal {
 			break;
 		case 3:
 			System.out.println();
-			System.out.println(liga.getClasificacion());
 			System.out.println();
-			generarPartidos(calendario, JORNADASJUGADAS);
+			System.out.println(clasificacion.toString());
 			break;
 		case 4:
 			System.out.println("   ╔════════════════════════════╗");
