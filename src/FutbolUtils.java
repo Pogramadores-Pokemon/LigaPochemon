@@ -34,6 +34,7 @@ public  class FutbolUtils {
 		}catch(IOException e) {
 			
 			e.printStackTrace();
+			
 		}
 	}
 
@@ -83,15 +84,15 @@ public  class FutbolUtils {
 
 		for(int i=0;i<longitudLista;i++) {
 			
-			for (int j=1; j<(longitudLista-i); j++) {
+			for (int j = 1; j < (longitudLista-i); j++) {
 				
 				if(listaElementos[j-1].getApellidos().compareTo(listaElementos[j].getApellidos())> 0) {
 					
 					//Cuando el de arriba es mas grande se cambian
 					
-					jugadorTemporal=listaElementos[j-1];
-					listaElementos[j-1]=listaElementos[j];
-					listaElementos[j]=jugadorTemporal;
+					jugadorTemporal = listaElementos[j-1];
+					listaElementos[j-1] = listaElementos[j];
+					listaElementos[j] = jugadorTemporal;
 
 				}
 			}
@@ -106,7 +107,6 @@ public  class FutbolUtils {
 	}
 
 
-
 	//Añade las clases que consideres necesarias
 
 	public Jugador[] leerJugador(String archivo,Equipo equipo) {
@@ -119,7 +119,7 @@ public  class FutbolUtils {
 			BufferedReader buffLector = new BufferedReader(lector2);
 			String cadenaVacia;
 			
-			while((cadenaVacia =buffLector.readLine()) != null) {
+			while((cadenaVacia = buffLector.readLine()) != null) {
 				
 				for(int i = 0; i < 22; i++) {
 				
