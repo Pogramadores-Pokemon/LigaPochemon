@@ -81,7 +81,7 @@ public  class FutbolUtils {
 		Jugador[] listaElementos = equipo.getJugadores();
 		int longitudLista=listaElementos.length;
 
-		for(int i=0;i<n;i++) {
+		for(int i=0;i<longitudLista;i++) {
 			
 			for (int j=1; j<(longitudLista-i); j++) {
 				
