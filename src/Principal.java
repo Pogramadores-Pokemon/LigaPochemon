@@ -4,7 +4,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		final int NUMEROEQUIPOS=4;
+		final int NUMEROEQUIPOS=20;
 		final int EDAD=(int) Math.floor((Math.random())*15)+4;
 		final String NOMBRELIGA="Liga Pochemon";
 		final int JORNADASJUGADAS=38;
